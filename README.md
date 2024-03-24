@@ -1,0 +1,107 @@
+Purpose: plan a road trip by taking in destinations and outputing driving directions and reccommentions on places to stay
+
+Datasets:
+
+- highways and roads
+    - sources:
+        - openstreetmaps
+            - tag = {'route':'road'}
+        - BQ open dataset (no major highways)
+            - https://console.cloud.google.com/marketplace/product/united-states-census-bureau/all-roads?project=read-receipt-images 
+    - purpose:
+        - mapping routes
+- coworking space
+    - purpose:
+        - a place to work remotely
+    - sources:
+        - openstreetmap
+            - tag = {'office':'coworking'}
+- hotels/campsites
+    - sources:
+        - an api
+        - openstreetmaps
+            - tag = {'building':'hotel'}
+                - usually used in conjunction with {'tourism':'hotel'} or value 'motel' to retrieve entire hotel/motel grounds
+            - tag = {'tourism':'camp_site'}
+                - entire camp grounds. use value 'camp_pitch' for specific plots within a camp_site
+            - tag = {'tourism':'apartment'}
+                - a furnished apartment for short term/holiday rent
+            - tag = {'tourism':'museum'}
+            - property = {'dog':'yes/no'}
+                - denotes if dogs are allowed at the element
+    - purpose:
+        - find accomodations
+- gas stations:
+    - sources:
+        - openstreetmaps
+            - tag = {'amenity':'fuel'}
+    - purpose
+        - where to fill up
+        - snacks
+        - washroom
+- rest stops:
+    - Purpose:
+        - washroom
+        - taking a break
+    - sources:
+        - openstreetmaps
+            - property = {'toilet':'yes/no'}
+                - denotes if the element has toilets available
+- viewpoints:
+    - purpose
+        - see something noteworthy/take a break
+    - sources:
+        - openstreetmaps
+            - tag = {'tourism':'viewpoint'}
+- parks:
+    - purpose: 
+        - hanging out, taking a break
+    - sources: 
+        - openstreetmaps
+            - tag = {'leisure':'park'}
+- points of interest (ambiguous):
+    - purpose:
+        - taking a break
+        - adventure
+    
+- resturants:
+    - sources:
+        - openstreetmaps
+    - purpose:
+        - food along the way
+- grocery stores:
+    - sources:
+        - openstreemaps
+            - tag = {'building':'supermarket'} and/or {'shop':'supermarket'}
+                - A building constructed to house a self-service large-area store that contains groceries, etc
+            - tag = {'shop':'food'}
+                - be more specific with various other values ushc as 'deli', 'pasta', 'alcohol', 'convenience'
+    - purpose:
+        - at home cooking
+- boundaries (country, county, etc)
+    - sources:
+        - openstreetmaps
+            - tag = {'boundary':'administrative'}
+                - used for nations through to local boundaries
+                - attribute = {'admin_level':'1-11'}
+            - tag = {'boundary':'national_park'}
+                - used to denote national parks
+            - tag = {'place':a number of possible tags}
+- geo coordinates:
+    - sources: 
+        - openstreetmaps
+            - tag = 
+        - fixed polygons
+            - eg. jurisdictional boundaries
+    - purpose:
+        - searching and returning coordinates within a radius
+        - returning coordinate ranges within a custom search boundary
+        - anchor for other searches
+- cars:
+    - purpose:
+        - enter car, year, approx mileage and get where should stop for gas
+
+Exampleds:
+- I am driving from LA to NYC and want to drive a max of 6.5 hours a day.
+- I want to stay in 3 star hotels no more than $150 a night that have either a mexican or italian restaurant within 3 miles. 
+- I
